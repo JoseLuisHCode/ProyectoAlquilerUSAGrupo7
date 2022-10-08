@@ -14,7 +14,7 @@
 	<name>Reto3</name>
 	<description>Desarrollo renta de barcos con spring web</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
