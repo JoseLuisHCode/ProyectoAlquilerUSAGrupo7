@@ -23,7 +23,7 @@ public class Client {
     private String name;
     private Integer age;
 
- @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
     @JsonIgnoreProperties("client")
     public List<Message>messages;
 
