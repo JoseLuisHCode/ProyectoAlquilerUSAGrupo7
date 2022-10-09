@@ -24,11 +24,11 @@ public class Client {
     private Integer age;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"client"})
     public List<Message>messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"client"})
     public List<Reservation>reservations;
 
     public Integer getIdClient() {

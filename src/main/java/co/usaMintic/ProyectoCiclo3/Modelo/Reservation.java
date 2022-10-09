@@ -26,7 +26,7 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties({"reservations"})
     private Boat boat;
 
     @ManyToOne
