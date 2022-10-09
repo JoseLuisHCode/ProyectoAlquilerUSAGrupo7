@@ -23,7 +23,7 @@ public class Category {
     private String description;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="category")
-    @JsonIgnoreProperties("category")
+    @JsonIgnoreProperties({"category","boat"})
     private List<Boat> boats;
 
     public Integer getId() {
