@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.usaMintic.ProyectoCiclo3.Modelo.CountClient;
+import co.usaMintic.ProyectoCiclo3.Modelo.CountStatus;
 import co.usaMintic.ProyectoCiclo3.Modelo.Reservation;
 import co.usaMintic.ProyectoCiclo3.Servicio.RerservationServicio;
 
@@ -49,4 +51,20 @@ public class ReservationControlador {
     public boolean delete(@PathVariable("id") int id){
         return reservationService.deleteReservation(id);
     }
+
+    @GetMapping("/report-dates/{fecha1}/{fecha2}")
+    public List<Reservation> getReservationsInPeriodReport(@PathVariable("fecha1") String fecha1,@PathVariable("fecha2") String fecha2){
+        return reservationService.getReservationsInPeriod(fecha1, fecha2);
+    }
+
+    @GetMapping("/report-status")
+    public CountStatus getReservationSatatusReport(){
+        return reservationService.getReservationStatusReport();
+
+    }
+    @GetMapping("/report-clients")
+    public List<CountClient> getTopClientsReport(){
+        return reservationService.getTopClientsReport();
+    }
+
 }
